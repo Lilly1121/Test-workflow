@@ -1,0 +1,27 @@
+# This is the name of your workflow. It will be displayed in the Actions tab.
+name: Greet the User
+
+# This section defines the triggers for the workflow.
+on:
+  # Run this workflow every time code is pushed to any branch.
+  push:
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run in parallel.
+jobs:
+  # This is the unique ID for our job. Let's call it 'greeting-job'.
+  greeting-job:
+    # This specifies the type of virtual machine to run the job on.
+    # 'ubuntu-latest' is a standard and reliable choice.
+    runs-on: ubuntu-latest
+
+    # 'steps' represent a sequence of tasks that will be executed as part of the job.
+    steps:
+      # Each step can have a name, which is displayed in the logs.
+      - name: Print a greeting message
+        # 'run' tells the job to execute a command on the command-line.
+        run: echo "Hello, World! Welcome to your first GitHub Action!"
+
+      - name: Print a goodbye message
+        run: echo "The workflow has completed successfully. Goodbye!"
